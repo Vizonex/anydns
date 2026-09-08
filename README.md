@@ -16,8 +16,22 @@ This library takes __c-ares__ libraries currently but many more
 Frontend is still being worked on for now but currently picking the library installed should be enough for now.
 
 ```python
+import anyio
+
+from anydns.cyares import DNSResolver
+
+# this will also work
+from anydns.pycares import DNSResolver
+
+async def main():
+    async with DNSResolver(["8.8.4.4","1.1.1.1"], timeout=2) as r:
+        info = await r.gethostbyaddr("50.87.249.219")
+    # HostResult(name='box2079.bluehost.com', aliases=['box2079.bluehost.com'], addresses=['50.87.249.219'])
+    print(info)
 
 
+if __name__ == "__main__":
+    anyio.run(main)
 ```
 
 
