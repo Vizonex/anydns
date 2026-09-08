@@ -26,6 +26,15 @@ all = [
     "cyares>=0.9.0"
 ]
 
+tests = [
+    "pytest==9.1.1",
+    'winloop==0.6.3; platform_system == "Windows"',
+    'uvloop; platform_system != "Windows"',
+    'trio==0.34.0',
+    "pycares>=5.0.1",
+    "cyares>=0.9.0"
+]
+
 [build-system]
 requires = ["setuptools"]
 
