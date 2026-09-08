@@ -1,0 +1,39 @@
+[project]
+name = "anydns"
+dynamic = ["version"]
+description = "c-ares bindings to anyio using pycares & cyares"
+readme = "README.md"
+authors = [
+    { name = "Vizonex", email = "VizonexBusiness@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "anyio>=4.15.0",
+    "msgspec>=0.21.1",
+]
+
+[project.optional-dependencies]
+pycares = [
+    "pycares>=5.0.1",
+]
+
+cyares = [
+    "cyares>=0.9.0",
+]
+
+all = [
+    "pycares>=5.0.1",
+    "cyares>=0.9.0"
+]
+
+[build-system]
+requires = ["setuptools"]
+
+[dependency-groups]
+dev = [
+    "cyares>=0.9.0",
+    "pycares>=5.0.1",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "anydns.__version__"}

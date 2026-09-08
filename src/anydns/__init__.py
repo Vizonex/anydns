@@ -1,0 +1,51 @@
+from .converter import (
+    AAAARecordData,
+    AddrInfoCname,
+    AddrInfoNode,
+    AddrInfoResult,
+    ARecordData,
+    CAARecordData,
+    CNAMERecordData,
+    DNSRecord,
+    DNSResult,
+    HostResult,
+    HTTPSRecordData,
+    MXRecordData,
+    NameInfoResult,
+    NAPTRRecordData,
+    NSRecordData,
+    PTRRecordData,
+    SOARecordData,
+    SRVRecordData,
+    TLSARecordData,
+    TXTRecordData,
+    URIRecordData,
+)
+
+__version__ = "0.1.0"
+__author__ = "Vizonex"
+__license__ = "Apache 2.0"
+
+__all__ = (
+    "AAAARecordData",
+    "ARecordData",
+    "AddrInfoCname",
+    "AddrInfoNode",
+    "AddrInfoResult",
+    "CAARecordData",
+    "CNAMERecordData",
+    "DNSRecord",
+    "DNSResult",
+    "HTTPSRecordData",
+    "HostResult",
+    "MXRecordData",
+    "NAPTRRecordData",
+    "NSRecordData",
+    "NameInfoResult",
+    "PTRRecordData",
+    "SOARecordData",
+    "SRVRecordData",
+    "TLSARecordData",
+    "TXTRecordData",
+    "URIRecordData",
+)
