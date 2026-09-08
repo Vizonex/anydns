@@ -38,7 +38,7 @@ def _convert_enum_type(rtype: int | str | IntEnum, renum: type[IntEnum]) -> int:
     if isinstance(rtype, str):
         return renum._member_map_[rtype.upper()].value
     elif isinstance(rtype, renum):
-        return renum.value
+        return int(rtype)
     else:
         return rtype
 
@@ -301,7 +301,7 @@ class DNSResolver(AbstractDNSResolver):
 
     async def gethostbyaddr(self, name: str) -> HostResult:
         fut = Future()
-        with self._capture_ares_error(fut):
+        with self.wrap_failure(fut):
             self._channel.gethostbyaddr(
                 name, callback=partial(self._on_host_by_addr, fut)
             )

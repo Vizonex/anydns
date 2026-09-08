@@ -38,7 +38,7 @@ def _convert_enum_type(rtype: int | str | IntEnum, renum: type[IntEnum]) -> int:
     if isinstance(rtype, str):
         return renum._member_map_[rtype.upper()].value
     elif isinstance(rtype, renum):
-        return renum.value
+        return int(rtype)
     else:
         return rtype
 
